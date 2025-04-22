@@ -7,34 +7,30 @@ Original file is located at
     https://colab.research.google.com/drive/1O_wrz9-HffTjUUzUedPeIGVKgrUrund5
 """
 
-#cree una lista
+#cree lista
 notas = []
 
-print("si queres salir pone -1")
+#bucle para escribir el nombre de la materia o escribir salir para terminar
+while True:
+    materia = input("Nombre de la materia (o escribí 'salir' para terminar): ")
+    if materia == "salir":
+        break
 
-while true:
-  notas = int(input("ingrese nota de matematica"))
-  notas = int(input("ingrese nota de historia"))
-  notas = int(input(" ingrese nota de ed fisica"))
+    #nota es una variable q almcacena lo q el usuario escribe, lo pasa a float y f es para poner variable dentro de un texto
+    nota = float(input(f"Nota de {materia}"))
 
-  if notas == -1:
-   break
+    #si nota es mayor a 0 y menor de 10 se guarda en la lista notas
+    if 0 <= nota <= 10:
+        notas.append(nota)
+    else:
+        print("ERROR, La nota tiene que ser entre 0 y 10.")
 
+#se calcula el promedio  , si es mayor a 0 se suman las notas y se dividen por la cantidad que hay
+if len(notas) > 0:
+    promedio = sum(notas) / len(notas)
+    print("Promedio:", promedio)
 
-  if 0 <= and <= 10:
-  notas.append
-
-elif:
- print("la nota tiene q ser entre o y 10")
-
- #ahora calculo el promedio
-elif len notas > 0:
-promedio = sum(notas) / len(notas)
- print("tu promedio es", promedio)
-
-elif:
-promedio >= 7:
- print("aprobaste")
-
-else:
- print("no aprobaste")
+    if promedio >= 7:
+        print("Aprobaste.")
+    else:
+        print("No aprobaste.")
